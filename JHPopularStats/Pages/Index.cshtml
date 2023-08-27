@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Popular Stats";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Authorization Status</h1>
+    <p>@Model.Message</p>
+</div>
+
+<hr />
+
+<div class="text-center">
+    <h1 class="display-4">Posts with Most Up-votes</h1>
+    <ol>
+        @foreach (var post in Model.PopularPosts)
+        {
+            <li>@post</li>
+        }
+    </ol>
+    <br />
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Users with Most Posts</h1>
+    <ol>
+        @foreach (var user in Model.HighPostingUsers)
+        {
+            <li>@user</li>
+        }
+    </ol>
+    <br />
+</div>
